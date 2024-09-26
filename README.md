@@ -332,6 +332,7 @@ y=h(x)=wTx(式1)
 
 ## 实现线性单元
 
+```python
 from perceptron import Perceptron
 #定义激活函数f
 f = lambda x: x
@@ -371,6 +372,8 @@ if __name__ == '__main__':
     print('Work 15 years, monthly salary = %.2f' % linear_unit.predict([15]))
     print('Work 1.5 years, monthly salary = %.2f' % linear_unit.predict([1.5]))
     print('Work 6.3 years, monthly salary = %.2f' % linear_unit.predict([6.3]))
+
+```
 
 拟合的直线如下图
 
