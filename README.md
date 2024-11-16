@@ -117,11 +117,11 @@ $h$ 代表学习算法的解决方案或函数也称为假设（**hypothesis**�
 
 在后续课程中，我们还会谈论其他的代价函数，但我们刚刚讲的选择是对于大多数线性回归问题非常合理的。
 
-也许这个函数 $J(\theta_{0}, \theta_{1})$ 有点抽象，可能你仍然不知道它的内涵，在接下来的几个视频里，我们要更进一步解释代价函数J的工作原理，并尝试更直观地解释它在计算什么，以及我们使用它的目的。
+也许这个函数 $J(\theta_{0}, \theta_{1})$ 有点抽象，可能你仍然不知道它的内涵，我们更进一步解释代价函数J的工作原理，并尝试更直观地解释它在计算什么，以及我们使用它的目的。
 
 ### 2.3 代价函数的直观理解I
 
-在上一节中，我们给了代价函数一个数学上的定义。在这个视频里，让我们通过一些例子来获取一些直观的感受，看看代价函数到底是在干什么。
+在上一节中，我们给了代价函数一个数学上的定义。让我们通过一些例子来获取一些直观的感受，看看代价函数到底是在干什么。
 
 ![](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/10ba90df2ada721cf1850ab668204dc9.png)
 
@@ -129,7 +129,7 @@ $h$ 代表学习算法的解决方案或函数也称为假设（**hypothesis**�
 
 ### 2.4 代价函数的直观理解II
 
-这节中，我们将更深入地学习代价函数的作用，这段视频的内容假设你已经认识等高线图，如果你对等高线图不太熟悉的话，这节中的某些内容你可能会听不懂，但不要紧，如果你跳过这段的话，也没什么关系，不听这节课对后续课程理解影响不大。
+这节中，我们将更深入地学习代价函数的作用，假设你已经认识等高线图，如果你对等高线图不太熟悉的话，这节中的某些内容你可能会听不懂，但不要紧，如果你跳过这段的话，也没什么关系，不听这节课对后续课程理解影响不大。
 
 ![](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/0b789788fc15889fe33fb44818c40852.png)
 
@@ -141,7 +141,7 @@ $h$ 代表学习算法的解决方案或函数也称为假设（**hypothesis**�
 
 当然，我们真正需要的是一种有效的算法，能够自动地找出这些使代价函数 $J$ 取最小值的参数 $\theta_{0}$ 和 $\theta_{1}$ 来。
 
-我们也不希望编个程序把这些点画出来，然后人工的方法来读出这些点的数值，这很明显不是一个好办法。我们会遇到更复杂、更高维度、更多参数的情况，而这些情况是很难画出图的，因此更无法将其可视化，因此我们真正需要的是编写程序来找出这些最小化代价函数的 $\theta_{0}$ 和 $\theta_{1}$ 的值，在下一节视频中，我们将介绍一种算法，能够自动地找出能使代价函数 $J$ 最小化的参数 $\theta_{0}$ 和 $\theta_{1}$ 的值。
+我们也不希望编个程序把这些点画出来，然后人工的方法来读出这些点的数值，这很明显不是一个好办法。我们会遇到更复杂、更高维度、更多参数的情况，而这些情况是很难画出图的，因此更无法将其可视化，因此我们真正需要的是编写程序来找出这些最小化代价函数的 $\theta_{0}$ 和 $\theta_{1}$ 的值，我们将介绍一种算法，能够自动地找出能使代价函数 $J$ 最小化的参数 $\theta_{0}$ 和 $\theta_{1}$ 的值。
 
 ### 2.5 梯度下降
 
@@ -177,12 +177,9 @@ ${\theta_{0}}$ := ${\theta_{0}}$ ，并更新 ${\theta_{1}}$ := ${\theta_{1}}$ �
 
 $\alpha \frac{\partial }{\partial \theta_{0}} J(\theta_{0}, \theta_{1})$
 
-$\alpha \frac{\partial }{\partial {{\theta }_{1}}}J({{\theta }_{0}},{{\theta }_{1}})$ 。
-
-如果你不熟悉微积分，不用担心，即使你之前没有看过微积分，或者没有接触过偏导数，在接下来的视频中，你会得到一切你需要知道，如何计算这个微分项的知识。
-
 $\alpha \frac{\partial }{\partial \theta_{1}} J(\theta_{0}, \theta_{1})$
 
+如果你不熟悉微积分，不用担心，即使你之前没有看过微积分，或者没有接触过偏导数，接下来，你会得到一切你需要知道，如何计算这个微分项的知识。
 
 ### 2.6 梯度下降的直观理解
 
@@ -195,7 +192,7 @@ ${\theta_{j}}:={\theta_{j}}-\alpha \frac{\partial }{\partial {\theta_{j}}}J\left
 ![](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/ee916631a9f386e43ef47efafeb65b0f.png)
 
 
-对于这个问题，求导的目的，基本上可以说取这个红点的切线，就是这样一条红色的直线，刚好与函数相切于这一点，让我们看看这条红色直线的斜率，就是这条刚好与函数曲线相切的这条直线，这条直线的斜率正好是这个三角形的高度除以这个水平长度，现在，这条线有一个正斜率，也就是说它有正导数，因此，我得到的新的 ${\theta_{1}}$ ，${\theta_{1}}$ 更新后等于 ${\theta_{1}}$ 减去一个正数乘以 $a$ 。
+对于这个问题，求导的目的，基本上可以说取这个红点的切线，就是这样一条红色的直线，刚好与函数相切于这一点，让我们看看这条红色直线的斜率，就是这条刚好与函数曲线相切的这条直线，这条直线的斜率正好是这个三角形的高度除以这个水平长度，现在，这条线有一个正斜率，也就是说它有正导数，因此，我得到的新的 ${\theta_{1}}$ , ${\theta_{1}}$ 更新后等于 ${\theta_{1}}$ 减去一个正数乘以 $a$ 。
 
 这就是我梯度下降法的更新规则：${\theta_{j}}:={\theta_{j}}-\alpha \frac{\partial }{\partial {\theta_{j}}}J\left( \theta  \right)$
 
@@ -261,30 +258,60 @@ $j=1$  时：$\frac{\partial }{\partial \theta_{1}} J(\theta_{0}, \theta_{1}) = 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-#引入数据
+```
+
+引入数据
+
+```
 path =  'data1.txt'
 data = pd.read_csv(path, header=None, names=['Population', 'Profit'])
 data.plot(kind='scatter', x='Population', y='Profit', figsize=(12,8))
 #看下数据长什么样子
 plt.show()
+```
+
+首先，我们将创建一个以参数θ为特征函数的代价函数
+$J\\left( \\theta  \\right)=\\frac{1}{2m}\\sum\\limits_{i=1}^{m}{{{\\left( {{h}_{\\theta }}\\left( {{x}^{(i)}} \\right)-{{y}^{(i)}} \\right)}^{2}}}$
+
+其中： $h_{\theta}(x) = \theta^{T}X = \theta_{0}x_{0} + \theta_{1}x_{1} + \theta_{2}x_{2} + \dots + \theta_{n}x_{n}\$
+
+```
 #代价函数
 def computeCost(X, y, theta):
     inner = np.power(((X * theta.T) - y), 2)
     return np.sum(inner) / (2 * len(X))
-#让我们在训练集中添加一列，以便我们可以使用向量化的解决方案来计算代价和梯度。
+```
+
+让我们在训练集中添加一列，以便我们可以使用向量化的解决方案来计算代价和梯度。
+```
 data.insert(0, 'Ones', 1)
-#现在我们来做一些变量初始化。
+```
+
+现在我们来做一些变量初始化。
+```
 # set X (training data) and y (target variable)
 cols = data.shape[1]
 X = data.iloc[:,0:cols-1]#X是所有行，去掉最后一列
 y = data.iloc[:,cols-1:cols]#X是所有行，最后一列
-#代价函数是应该是numpy矩阵，所以我们需要转换X和Y，然后才能使用它们。 我们还需要初始化theta。
+```
+
+代价函数是应该是numpy矩阵，所以我们需要转换X和Y，然后才能使用它们。 我们还需要初始化theta。
+```
 X = np.matrix(X.values)
 y = np.matrix(y.values)
 theta = np.matrix(np.array([0,0]))
-#计算代价函数 (theta初始值为0).
-computeCost(X, y, theta)
+```
 
+计算代价函数 (theta初始值为0).
+```
+computeCost(X, y, theta)
+```
+
+# batch gradient decent（批量梯度下降）
+
+${{\\theta }_{j}}:={{\\theta }_{j}}-\\alpha \\frac{\\partial }{\\partial {{\\theta }_{j}}}J\\left( \\theta  \\right)$
+
+```
 #批量梯度下降
 def gradientDescent(X, y, theta, alpha, iters):
     temp = np.matrix(np.zeros(theta.shape))
@@ -301,16 +328,27 @@ def gradientDescent(X, y, theta, alpha, iters):
         theta = temp
         cost[i] = computeCost(X, y, theta)
     return theta, cost
-#初始化一些附加变量 - 学习速率α和要执行的迭代次数。
+```
+
+初始化一些附加变量 - 学习速率α和要执行的迭代次数。
+```
 alpha = 0.01
 iters = 1000
-#现在让我们运行梯度下降算法来将我们的参数θ适合于训练集。
+```
+
+现在让我们运行梯度下降算法来将我们的参数θ适合于训练集。
+```
 g, cost = gradientDescent(X, y, theta, alpha, iters)
 g
-#最后，我们可以使用我们拟合的参数计算训练模型的代价函数（误差）。
-computeCost(X, y, g)
+```
 
-#现在我们来绘制线性模型以及数据，直观地看出它的拟合。
+最后，我们可以使用我们拟合的参数计算训练模型的代价函数（误差）。
+```
+computeCost(X, y, g)
+```
+
+现在我们来绘制线性模型以及数据，直观地看出它的拟合。
+```
 x = np.linspace(data.Population.min(), data.Population.max(), 100)
 f = g[0, 0] + (g[0, 1] * x)
 
