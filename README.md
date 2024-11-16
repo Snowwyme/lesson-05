@@ -284,8 +284,6 @@ computeCost(X, y, theta)
 
 # batch gradient decent（批量梯度下降）
 
-${{\\theta }_{j}}:={{\\theta }_{j}}-\\alpha \\frac{\\partial }{\\partial {{\\theta }_{j}}}J\\left( \\theta  \\right)$
-
 ```
 #批量梯度下降
 def gradientDescent(X, y, theta, alpha, iters):
